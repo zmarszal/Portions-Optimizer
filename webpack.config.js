@@ -11,7 +11,7 @@ module.exports = {
     filename: './public/bundle.js'
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.mjs', '.js', '.jsx', '.gql', '.graphql']
   },
   devtool: 'source-map',
   watchOptions: {

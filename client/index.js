@@ -5,15 +5,18 @@ import {Router} from 'react-router-dom'
 import history from './history'
 import store from './store'
 import App from './app'
+import {ApolloProvider} from 'react-apollo'
+import ApolloClient from 'apollo-boost'
 
-// establishes socket connection
-import './socket'
+const client = new ApolloClient()
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Router history={history}>
-      <App />
-    </Router>
-  </Provider>,
+  <ApolloProvider client={client}>
+    <Provider store={store}>
+      <Router history={history}>
+        <App />
+      </Router>
+    </Provider>
+  </ApolloProvider>,
   document.getElementById('app')
 )
