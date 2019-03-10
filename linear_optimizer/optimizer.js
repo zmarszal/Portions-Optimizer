@@ -58,10 +58,10 @@ const formatReturnArr = (foods, result) => {
     return 'Cannot eat these foods and stay within your restrictions'
   else {
     return foods.map(food => {
-      const foodName = food.name.split(' ').join('_')
+      let foodName = food.name.split(' ').join('_')
       const servings = result[foodName] * food.servingSize
+      foodName = food.name.split('_').join(' ')
       const units = food.servingUnit
-      // return `${result[foodName]*food.servingSize} ${food.servingUnit}'s of ${food.name}`
       return {servings, foodName, units}
     })
   }
